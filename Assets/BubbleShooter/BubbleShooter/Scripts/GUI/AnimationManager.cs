@@ -267,7 +267,7 @@ public class AnimationManager : MonoBehaviour
 
 	public void GoOnFailed()
 	{
-		LevelData.LimitAmount        +=10;
+		LevelData.LimitAmount        +=5;
 		GameEvent.Instance.GameStatus= GameState.WaitAfterClose;
 		gameObject.SetActive(false);
 	}
@@ -381,11 +381,11 @@ public class AnimationManager : MonoBehaviour
 	public void BuyBubbles()
 	{
 		SoundBase.Instance.GetComponent<AudioSource>().PlayOneShot(SoundBase.Instance.click);
-		if(InitScript.Gems>= 50)
+		if(InitScript.Gems>=50)
 		{
 			//1.1
 			InitScript.Instance.SpendGems(50); //1.1
-			InitScript.Instance.RestoreLifes();
+			GoOnFailed();
 			CloseMenu();
 		}
 		else
