@@ -730,7 +730,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
-    Android: USE_ADMOB;USE_ADMOB_PATCH
+    Android: UNITY_INAPPS
     WebGL: GOOGLE_MOBILE_ADS;UNITY_INAPPS
     Windows Store Apps: UNITY_INAPPS
     iPhone: USE_ADMOB_PATCH

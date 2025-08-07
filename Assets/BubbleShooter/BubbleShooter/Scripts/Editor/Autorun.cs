@@ -17,8 +17,6 @@ public class Autorun {
 				EditorSceneManager.OpenScene ("Assets/RaccoonRescue/Scenes/map.unity");
 
 			}
-			LevelEditor.Init ();
-			LevelEditor.ShowHelp ();
 			EditorPrefs.SetBool ("AlreadyOpened", true);
 		}
 

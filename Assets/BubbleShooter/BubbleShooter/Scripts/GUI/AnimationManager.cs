@@ -290,7 +290,7 @@ public class AnimationManager : MonoBehaviour
 		SoundBase.Instance.GetComponent<AudioSource>().PlayOneShot(SoundBase.Instance.coins);
 		if(pack.name=="Pack1")
 		{
-			InitScript.waitedPurchaseGems=int.Parse(pack.transform.Find("Count").GetComponent<Text>().text.Replace("x ",""));
+			InitScript.waitedPurchaseGems=10;
 #if UNITY_WEBPLAYER || UNITY_STANDALONE
             InitScript.Instance.PurchaseSucceded();
             CloseMenu();
@@ -303,7 +303,7 @@ public class AnimationManager : MonoBehaviour
 
 		if(pack.name=="Pack2")
 		{
-			InitScript.waitedPurchaseGems=int.Parse(pack.transform.Find("Count").GetComponent<Text>().text.Replace("x ",""));
+			InitScript.waitedPurchaseGems=20;
 #if UNITY_WEBPLAYER || UNITY_STANDALONE
             InitScript.Instance.PurchaseSucceded();
             CloseMenu();
@@ -315,7 +315,7 @@ public class AnimationManager : MonoBehaviour
 		}
 		if(pack.name=="Pack3")
 		{
-			InitScript.waitedPurchaseGems=int.Parse(pack.transform.Find("Count").GetComponent<Text>().text.Replace("x ",""));
+			InitScript.waitedPurchaseGems=30;
 #if UNITY_WEBPLAYER || UNITY_STANDALONE
             InitScript.Instance.PurchaseSucceded();
             CloseMenu();
@@ -327,7 +327,7 @@ public class AnimationManager : MonoBehaviour
 		}
 		if(pack.name=="Pack4")
 		{
-			InitScript.waitedPurchaseGems=int.Parse(pack.transform.Find("Count").GetComponent<Text>().text.Replace("x ",""));
+			InitScript.waitedPurchaseGems=50;
 #if UNITY_WEBPLAYER || UNITY_STANDALONE
             InitScript.Instance.PurchaseSucceded();
             CloseMenu();
@@ -335,6 +335,18 @@ public class AnimationManager : MonoBehaviour
 #endif
 #if UNITY_INAPPS
 			UnityInAppsIntegration.THIS.BuyProductID(LevelEditorBase.THIS.InAppIDs[3]);
+#endif
+		}
+		if(pack.name=="Pack5")
+		{
+			InitScript.waitedPurchaseGems=100;
+#if UNITY_WEBPLAYER || UNITY_STANDALONE
+            InitScript.Instance.PurchaseSucceded();
+            CloseMenu();
+            return;
+#endif
+#if UNITY_INAPPS
+			UnityInAppsIntegration.THIS.BuyProductID(LevelEditorBase.THIS.InAppIDs[4]);
 #endif
 		}
 		CloseMenu();
@@ -356,6 +368,23 @@ public class AnimationManager : MonoBehaviour
 		{
 			//1.1
 			InitScript.Instance.SpendGems(int.Parse(button.transform.Find("PriceRefill").GetComponent<Text>().text)); //1.1
+			InitScript.Instance.RestoreLifes();
+			CloseMenu();
+		}
+		else
+		{
+			MenuManager.Instance.ShowCurrencyShop();
+		}
+
+	}
+
+	public void BuyBubbles()
+	{
+		SoundBase.Instance.GetComponent<AudioSource>().PlayOneShot(SoundBase.Instance.click);
+		if(InitScript.Gems>= 50)
+		{
+			//1.1
+			InitScript.Instance.SpendGems(50); //1.1
 			InitScript.Instance.RestoreLifes();
 			CloseMenu();
 		}
