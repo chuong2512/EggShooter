@@ -5,7 +5,7 @@ public class Cub : MonoBehaviour
 {
 	public GameObject shadow;
 	public GameObject parachute;
-	public Animator anim;
+	//public Animator anim;
 	Vector3[] randomPos;
 	Vector3 targetPos;
 	// Use this for initialization
@@ -23,7 +23,11 @@ public class Cub : MonoBehaviour
 
 	IEnumerator Fall()
 	{
-
+		shadow.SetActive(false);
+		
+		parachute.SetActive(true);
+		
+		
 		float startTime = Time.time;
 		Vector3 startPos = transform.position;
 		//		randomPos = Random.insideUnitCircle + (Vector2)randomPos;
@@ -49,8 +53,9 @@ public class Cub : MonoBehaviour
 
 	void Landing()
 	{
-		anim.SetTrigger("idle");
-		//shadow.SetActive(true);
+		//anim.SetTrigger("idle");
+		shadow.SetActive(true);
+		
 		parachute.SetActive(false);
 		//		anim.Stop ();
 		transform.position = targetPos;
