@@ -291,63 +291,58 @@ public class AnimationManager : MonoBehaviour
 		if(pack.name=="Pack1")
 		{
 			InitScript.waitedPurchaseGems=10;
-#if UNITY_WEBPLAYER || UNITY_STANDALONE
-            InitScript.Instance.PurchaseSucceded();
-            CloseMenu();
-            return;
-#endif
-#if UNITY_INAPPS
-			UnityInAppsIntegration.THIS.BuyProductID(LevelEditorBase.THIS.InAppIDs[0]);
-#endif
+			IAPManager.OnPurchaseSuccess=() =>
+			{
+				InitScript.Instance.PurchaseSucceded();
+				CloseMenu();
+			};
+			
+			IAPManager.Instance.BuyProductID(IAPKey.PACK1);
 		}
 
 		if(pack.name=="Pack2")
 		{
 			InitScript.waitedPurchaseGems=20;
-#if UNITY_WEBPLAYER || UNITY_STANDALONE
-            InitScript.Instance.PurchaseSucceded();
-            CloseMenu();
-            return;
-#endif
-#if UNITY_INAPPS
-			UnityInAppsIntegration.THIS.BuyProductID(LevelEditorBase.THIS.InAppIDs[1]);
-#endif
+			IAPManager.OnPurchaseSuccess=() =>
+			{
+				InitScript.Instance.PurchaseSucceded();
+				CloseMenu();
+			};
+			
+			IAPManager.Instance.BuyProductID(IAPKey.PACK2);
 		}
 		if(pack.name=="Pack3")
 		{
 			InitScript.waitedPurchaseGems=30;
-#if UNITY_WEBPLAYER || UNITY_STANDALONE
-            InitScript.Instance.PurchaseSucceded();
-            CloseMenu();
-            return;
-#endif
-#if UNITY_INAPPS
-			UnityInAppsIntegration.THIS.BuyProductID(LevelEditorBase.THIS.InAppIDs[2]);
-#endif
+			IAPManager.OnPurchaseSuccess=() =>
+			{
+				InitScript.Instance.PurchaseSucceded();
+				CloseMenu();
+			};
+			
+			IAPManager.Instance.BuyProductID(IAPKey.PACK3);
 		}
 		if(pack.name=="Pack4")
 		{
 			InitScript.waitedPurchaseGems=50;
-#if UNITY_WEBPLAYER || UNITY_STANDALONE
-            InitScript.Instance.PurchaseSucceded();
-            CloseMenu();
-            return;
-#endif
-#if UNITY_INAPPS
-			UnityInAppsIntegration.THIS.BuyProductID(LevelEditorBase.THIS.InAppIDs[3]);
-#endif
+			IAPManager.OnPurchaseSuccess=() =>
+			{
+				InitScript.Instance.PurchaseSucceded();
+				CloseMenu();
+			};
+			
+			IAPManager.Instance.BuyProductID(IAPKey.PACK4);
 		}
 		if(pack.name=="Pack5")
 		{
 			InitScript.waitedPurchaseGems=100;
-#if UNITY_WEBPLAYER || UNITY_STANDALONE
-            InitScript.Instance.PurchaseSucceded();
-            CloseMenu();
-            return;
-#endif
-#if UNITY_INAPPS
-			UnityInAppsIntegration.THIS.BuyProductID(LevelEditorBase.THIS.InAppIDs[4]);
-#endif
+			IAPManager.OnPurchaseSuccess=() =>
+			{
+				InitScript.Instance.PurchaseSucceded();
+				CloseMenu();
+			};
+			
+			IAPManager.Instance.BuyProductID(IAPKey.PACK5);
 		}
 		CloseMenu();
 

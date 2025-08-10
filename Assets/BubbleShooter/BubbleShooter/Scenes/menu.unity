@@ -1620,6 +1620,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasLoading
       objectReference: {fileID: 0}
+    - target: {fileID: 114881394580115358, guid: 0ad51c26393914ae2b03d50678cf8f56,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224484942704238664, guid: 0ad51c26393914ae2b03d50678cf8f56,
         type: 3}
       propertyPath: m_Pivot.x
