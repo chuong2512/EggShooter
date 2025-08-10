@@ -17365,6 +17365,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11464204, guid: b08b1744d4e29eb46a4e670ad7bf5c13, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: b08b1744d4e29eb46a4e670ad7bf5c13, type: 3}
       propertyPath: m_Size.x
       value: 2

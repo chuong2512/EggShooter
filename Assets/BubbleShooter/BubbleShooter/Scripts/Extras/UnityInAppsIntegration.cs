@@ -14,7 +14,7 @@ public class UnityInAppsIntegration : MonoBehaviour, IStoreListener
 
     // Product identifiers for all products capable of being purchased: "convenience" general identifiers for use with Purchasing, and their store-specific identifier counterparts 
     // for use with and outside of Unity Purchasing. Define store-specific identifiers also on each platform's publisher dashboard (iTunes Connect, Google Play Developer Console, etc.)
-    private static string[] kProductIDConsumableArray = new string[4];                                                       // General handle for the consumable product.
+    private static string[] kProductIDConsumableArray = new string[5];                                                       // General handle for the consumable product.
 
     private static string kProductIDConsumable = "consumable";                                                         // General handle for the consumable product.
     private static string kProductIDNonConsumable = "nonconsumable";                                                  // General handle for the non-consumable product.
